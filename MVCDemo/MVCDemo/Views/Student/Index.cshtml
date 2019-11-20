@@ -1,0 +1,54 @@
+﻿@using MVCDemo.Models
+  
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+         <td>@Html.Label("Username")</td>
+         <td>@Html.TextBox("Username", null)</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Password")</td>
+        <td>@Html.Password("Password")</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Gender")</td>
+        <td>
+            @Html.RadioButton("Gender", "Male")Male
+            @Html.RadioButton("Gender", "Female")Female
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Address")</td>
+        <td>
+            @Html.TextArea("Address", "")
+</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Hobbies")</td>
+        <td>
+            @Html.CheckBox("Hobbies", false) Listening Music
+            @Html.CheckBox("Hobbies", false) Dancing
+            @Html.CheckBox("Hobbies", false)Drawing
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Course")</td>
+        <td>@Html.DropDownList("ddlCourse", new SelectList(strList, strList.FirstOrDefault()), "--Select Course----")
+</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Skills")</td>
+        <td>@Html.ListBox("Select Skills", new List<SelectListItem> {
+                           new SelectListItem{Text= "C#",Value="1"},
+                           new SelectListItem{ Text="ASP.NET",Value="2" },
+                           new SelectListItem{ Text="ASP.NET Core",Value="3" },
+                           new SelectListItem{ Text="Azure",Value="4" }
+                            })</td>
+    </tr>
+</table>
+

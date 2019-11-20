@@ -1,0 +1,20 @@
+﻿@model DataBindingDemo.Models.Product
+@{
+    ViewBag.Title = "Details";
+}
+<body>
+    <div>
+        <h2>Product Details</h2>
+        <dl>
+            <dt>ProductId</dt>
+            <dd>@Model.ProductId</dd>
+            <dt>Name</dt>
+            <dd>@Model.Name</dd>
+            <dt>Price</dt>
+            <dd>@Model.Price</dd>
+        </dl>
+        <div>
+            @Html.ActionLink("Back to Index", "Index")
+        </div>
+    </div>
+</body>

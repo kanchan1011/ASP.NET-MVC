@@ -1,0 +1,19 @@
+﻿<script>
+    function CheckPlugin() {
+        if (navigator.plugins["Chrome PDF viewer"] == undefined) {
+            alert("Please install pdf plugins.....");
+            location.href = "http://www.adobe.com/";
+        }
+        else {
+            alert("You can view pdf documents");
+
+        }
+    }
+    CheckPlugin();
+</script>
+<h2>
+    Index
+</h2>
+@Html.ActionLink("ASP Tutorial", "Tutorial");
+<span>|</span>
+@Html.ActionLink("Resume", "Ado");

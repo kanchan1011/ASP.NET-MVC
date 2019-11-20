@@ -1,0 +1,12 @@
+﻿@model IEnumerable<AjaxDemo.Models.Product>
+    
+@foreach(var item in Model)
+{
+    <tr>
+        <td>@item.ProductId</td>
+
+        <td>@item.Name</td>
+
+        <td>@item.Price</td>
+    </tr>
+}

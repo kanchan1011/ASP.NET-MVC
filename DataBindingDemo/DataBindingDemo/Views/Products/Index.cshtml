@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DataBindingDemo.Models.Product>
+
+<body>
+    <div>
+        <h2>Product index</h2>
+        
+        <table border="1">
+             <tr>
+                <th>ProductId</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Actions</th>
+             </tr>
+           @foreach (var item in Model)
+           {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = item.ProductId })</td>
+
+            </tr>
+           }
+                
+        </table>
+    </div>
+</body>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MyFirstMVCApplication.Models.Category>
+
+
+<div>
+
+    <table>
+        
+        <tr>
+            <th>Category Id</th>
+            <th>Name</th>
+           
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+
+
+    </table>
+
+</div>

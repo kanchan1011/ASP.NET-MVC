@@ -1,0 +1,20 @@
+﻿@model IEnumerable<PartialViewDemo.Models.Product>
+    <h2>
+    <b>
+        <u>Product Catalog</u>
+    </b>
+    </h2>
+
+<div>
+        @foreach(var item in Model)
+        {
+            <div>
+                    <div>
+                         <h4>@item.ProductId</h4>
+                    </div>
+
+                <div>@Html.Partial("ProtoType",item)</div>
+                <div>@Html.ActionLink("Details","Details",new { id=item.ProductId})</div>
+            </div>
+        }
+</div>

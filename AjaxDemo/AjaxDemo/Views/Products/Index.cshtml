@@ -1,0 +1,71 @@
+﻿<script src="~/scripts/jquery-3.0.0.js"></script>
+<script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+
+<script>
+    function onbegin() {
+        alert("List will be sorted...");
+    }
+
+    function onsuccess() {
+        alert("Sorted list will be displayed...");
+    }
+    function oncomplete() {
+        alert("Sorted successfully...");
+    }
+</script>
+
+<h2>Products Index</h2>
+<table class="table-hover">
+    <div style="display:none" align="center" id="loading">
+        <img width="50" height="50" src="~/Content/loading.gif" />Please wait......
+    </div>
+    <thead>
+        <th>
+            @Ajax.ActionLink("ProductId", "OrderById", new AjaxOptions()
+       {
+           HttpMethod = "Get",
+           UpdateTargetId = "grid",
+           InsertionMode=InsertionMode.Replace,
+           LoadingElementId="loading",
+           LoadingElementDuration=5000,
+           OnBegin="onbegin",
+           OnComplete="oncomplete",
+           OnSuccess="onsuccess" })
+        </th>
+        <th>
+            @Ajax.ActionLink("Name", "OrderByName", new AjaxOptions()
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "grid",
+            InsertionMode = InsertionMode.Replace,
+            LoadingElementId = "loading",
+            LoadingElementDuration = 5000,
+            OnBegin = "onbegin",
+            OnComplete = "oncomplete",
+            OnSuccess = "onsuccess"
+        })
+        </th>
+    <th>
+        @Ajax.ActionLink("Price", "OrderByPrice", new AjaxOptions()
+       {
+           HttpMethod = "Get",
+           UpdateTargetId = "grid",
+           InsertionMode = InsertionMode.Replace,
+           LoadingElementId = "loading",
+           LoadingElementDuration =5000,
+           OnBegin = "onbegin",
+           OnComplete = "oncomplete",
+           OnSuccess = "onsuccess"
+       })
+    </th>
+</thead>
+    <tbody id="grid"></tbody>   
+    <tfoot>
+        <tr>
+            <td colspan="3" align="center">Page laste accessed on:@DateTime.Now.ToString()
+                
+            </td>
+        </tr>
+    </tfoot> 
+
+</table>

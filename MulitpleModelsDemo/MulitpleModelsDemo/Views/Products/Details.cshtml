@@ -1,0 +1,24 @@
+﻿@model MulitpleModelsDemo.Models.Product
+   
+<body>
+    <div>
+        <h2>Product Deatils</h2>
+        <table width="400" border="1">
+            <tr>
+                <td>Product Id</td>
+                <td>@Model.ProductId</td>
+            </tr>
+            <tr>
+                <td>ProductName</td>
+                <td>@Model.ProductName</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>@Model.Price</td>
+            </tr>
+        </table>
+        <div>
+            @Html.ActionLink("Back to Product","Index",new { id=Model.Category_CategoryId})
+        </div>
+    </div>
+</body>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MulitpleModelsDemo.Models.Product>
+
+<body>
+    <div>
+        <h2>Product List</h2>
+        <ol>
+            @foreach(var item in Model)
+            {
+                <li>@Html.ActionLink(item.ProductName,"Details",new { id=item.ProductId})</li>
+            }
+        </ol>
+    </div>
+    <div>
+        @Html.ActionLink("Back to Category", "Index","Categories")
+    </div>
+</body>

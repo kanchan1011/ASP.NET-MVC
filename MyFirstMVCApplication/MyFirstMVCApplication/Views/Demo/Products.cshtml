@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MyFirstMVCApplication.Models.Product>
+ 
+<div>
+
+    <table>
+        
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Price</th>
+            <th>CategoryId</th>
+        </tr>
+        @foreach (var item in Model) {
+            <tr>
+                 <td>@item.ProductId</td>
+                 <td>@item.ProductName</td>
+                 <td>@item.Price</td>
+                 <td>@item.CategoryId</td>
+            </tr>
+        }
+              
+       
+    </table>
+
+</div>
